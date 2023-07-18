@@ -34,6 +34,9 @@ const onSceneReady = (scene) => {
 		scene
 	);
 	dome.fovMultiplier = 2.0;
+
+	//scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
+	//scene.fogDensity = 0.0005;
 };
 
 /**
