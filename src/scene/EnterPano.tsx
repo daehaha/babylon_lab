@@ -2,6 +2,7 @@ import React from "react";
 import { FreeCamera, Vector3, HemisphericLight, MeshBuilder } from "@babylonjs/core";
 import SceneComponent from 'babylonjs-hook';
 import * as BABYLON from 'babylonjs';
+import SimpleBox from '../unit/SimpleBox'
 let box: any;
 
 const onSceneReady = (scene) => {
@@ -37,6 +38,7 @@ const onSceneReady = (scene) => {
 
 	//scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
 	//scene.fogDensity = 0.0005;
+	let mybox = SimpleBox(scene);
 };
 
 /**
