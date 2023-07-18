@@ -14,6 +14,9 @@ dependencies:
   animejs:
     specifier: ^3.2.1
     version: 3.2.1
+  babylonjs:
+    specifier: ^6.12.3
+    version: 6.12.3
   babylonjs-hook:
     specifier: ^0.1.1
     version: 0.1.1(@babylonjs/core@6.12.3)(react@18.2.0)
@@ -1565,6 +1568,11 @@ packages:
     dependencies:
       '@babylonjs/core': 6.12.3
       react: 18.2.0
+    dev: false
+
+  /babylonjs@6.12.3:
+    resolution: {integrity: sha512-nAZAvIA/5btj8fBzcXHaceTFIpqdia+ouVCgLwREu2obHUbMvguYu/J9P5IEGsC/GJBsoWsPHn3pdH/POTks+Q==}
+    requiresBuild: true
     dev: false
 
   /balanced-match@1.0.2:

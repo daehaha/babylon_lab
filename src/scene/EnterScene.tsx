@@ -1,8 +1,8 @@
 import React from "react";
 import { FreeCamera, Vector3, HemisphericLight, MeshBuilder } from "@babylonjs/core";
-import SceneComponent from 'babylonjs-hook'; // if you install 'babylonjs-hook' NPM.
-
-let box;
+import SceneComponent from 'babylonjs-hook';
+import * as BABYLON from 'babylonjs';
+let box: any;
 
 const onSceneReady = (scene) => {
 	// This creates and positions a free camera (non-mesh)
@@ -22,10 +22,21 @@ const onSceneReady = (scene) => {
 	box = MeshBuilder.CreateBox("box", { size: 2 }, scene);
 
 	// Move the box upward 1/2 its height
-	box.position.y = 1;
+	box.position.y = 10;
 
 	// Our built-in 'ground' shape.
 	MeshBuilder.CreateGround("ground", { width: 6, height: 6 }, scene);
+	var skybox = BABYLON.Mesh.CreateBox("skyBox", 100.0, scene);
+	var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
+	skyboxMaterial.backFaceCulling = false;
+	skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("/panolens/1.jpg", scene);
+	skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+	skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
+	skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
+	skyboxMaterial.disableLighting = true;
+	skybox.material = skyboxMaterial;
+
+
 };
 
 /**
