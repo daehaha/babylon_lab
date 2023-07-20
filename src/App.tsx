@@ -1,12 +1,15 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Button from '@nextui-org/react/button';
-import EnterScene from './scene/EnterScene';
 import EnterPano from './scene/EnterPano';
+import { Modal, Text } from '@nextui-org/react';
 function App() {
-	const [count, setCount] = useState(0)
+	const [visible, setVisible] = useState(false);
+	const handler = () => setVisible(true);
+	const closeHandler = () => {
+		setVisible(false);
+		console.log("closed");
+	};
 
 	return (
 		<>
@@ -17,8 +20,34 @@ function App() {
 				This is red line
 				<EnterPano></EnterPano>
 			</div>
-			<Button>Click me</Button>
+			<Button auto shadow onPress={handler}>
+				Open modal
+			</Button>
 
+			<Modal
+				closeButton
+				aria-labelledby="modal-title"
+				open={visible}
+				onClose={closeHandler}
+			>
+				<Modal.Header>
+					<Text id="modal-title" size={18}>
+						Welcome to
+						NextUI
+					</Text>
+				</Modal.Header>
+				<Modal.Body>
+					<div>Tihs is modal!</div>
+				</Modal.Body>
+				<Modal.Footer>
+					<Button auto flat color="error" onPress={closeHandler}>
+						Close
+					</Button>
+					<Button auto onPress={closeHandler}>
+						Sign in
+					</Button>
+				</Modal.Footer>
+			</Modal>
 		</>
 	)
 }

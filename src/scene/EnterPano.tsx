@@ -7,7 +7,6 @@ let box: any;
 
 const onSceneReady = (scene) => {
 	var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
-
 	const canvas = scene.getEngine().getRenderingCanvas();
 	// This attaches the camera to the canvas
 	camera.attachControl(canvas, true);
@@ -26,19 +25,15 @@ const onSceneReady = (scene) => {
 	//add 360 dom 
 	var dome = new BABYLON.PhotoDome(
 		"testdome",
-		"/panolens/1.jpg",
+		"/panolens/test.png",
 		{
 			resolution: 64,
-			size: 2000,
+			size: 4000,
 			useDirectMapping: false
 		},
 		scene
 	);
 	dome.fovMultiplier = 2.0;
-
-	//scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
-	//scene.fogDensity = 0.0005;
-	let mybox = SimpleBox(scene);
 };
 
 /**
