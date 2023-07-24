@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Button from '@nextui-org/react/button';
 import EnterPano from './scene/EnterPano';
-import { Modal, Text } from '@nextui-org/react';
 import { AdvancedDynamicTexture } from '@babylonjs/gui/2D';
 import { Button as BTN } from '@babylonjs/gui/2D';
 function App() {
@@ -28,34 +26,8 @@ function App() {
 				This is red line
 				<EnterPano></EnterPano>
 			</div>
-			<Button auto shadow onPress={handler}>
-				Open modal
-			</Button>
 
-			<Modal
-				closeButton
-				aria-labelledby="modal-title"
-				open={visible}
-				onClose={closeHandler}
-			>
-				<Modal.Header>
-					<Text id="modal-title" size={18}>
-						Welcome to
-						NextUI
-					</Text>
-				</Modal.Header>
-				<Modal.Body>
-					<div>Tihs is modal!</div>
-				</Modal.Body>
-				<Modal.Footer>
-					<Button auto flat color="error" onPress={closeHandler}>
-						Close
-					</Button>
-					<Button auto onPress={closeHandler}>
-						Sign in
-					</Button>
-				</Modal.Footer>
-			</Modal>
+
 		</>
 	)
 }
