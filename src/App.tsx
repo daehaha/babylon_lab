@@ -3,6 +3,8 @@ import './App.css'
 import Button from '@nextui-org/react/button';
 import EnterPano from './scene/EnterPano';
 import { Modal, Text } from '@nextui-org/react';
+import { AdvancedDynamicTexture } from '@babylonjs/gui/2D';
+import { Button as BTN } from '@babylonjs/gui/2D';
 function App() {
 	const [visible, setVisible] = useState(false);
 	const handler = () => setVisible(true);
@@ -10,6 +12,12 @@ function App() {
 		setVisible(false);
 		console.log("closed");
 	};
+
+
+
+
+
+
 
 	return (
 		<>

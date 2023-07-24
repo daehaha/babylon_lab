@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@babylonjs/core": "^6.12.3",
-    "@nextui-org/react": "1.0.0-beta.13",
+    "@babylonjs/gui": "^6.13.0",
     "animejs": "^3.2.1",
     "babylonjs": "^6.12.3",
     "babylonjs-hook": "^0.1.1",
@@ -25,6 +25,7 @@
     "@typescript-eslint/parser": "^5.61.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "autoprefixer": "^10.4.14",
+    "daisyui": "^3.3.1",
     "eslint": "^8.44.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",

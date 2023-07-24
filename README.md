@@ -1,6 +1,6 @@
-# babylon with next ui 
+# babylon with daisyui
 - babylon
-- nextUI
+- daisyUI
 - tailwind 
 - animejs 
 
