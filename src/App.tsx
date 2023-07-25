@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import EnterPano from './scene/EnterPano';
-import { AdvancedDynamicTexture } from '@babylonjs/gui/2D';
-import { Button as BTN } from '@babylonjs/gui/2D';
+
+
+import * as BABYLON from 'babylonjs';
 function App() {
 	const [visible, setVisible] = useState(false);
 	const handler = () => setVisible(true);
@@ -24,9 +25,8 @@ function App() {
 			</h1>
 			<div className='w-full h-full bg-red-100'>
 				This is red line
-				<EnterPano></EnterPano>
 			</div>
-
+			<EnterPano />
 
 		</>
 	)

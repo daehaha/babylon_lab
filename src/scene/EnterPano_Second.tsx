@@ -1,5 +1,5 @@
 import React from "react";
-import { FreeCamera, Vector3, HemisphericLight, MeshBuilder } from "@babylonjs/core";
+import { FreeCamera, Vector3, HemisphericLight, MeshBuilder, SceneLoader } from "@babylonjs/core";
 import SceneComponent from 'babylonjs-hook';
 import * as BABYLON from 'babylonjs';
 import { GUI } from "@babylonjs/core";
@@ -7,7 +7,6 @@ import SimpleBox from '../unit/SimpleBox'
 import SimpleButton from '../unit/SimpleButton'
 import { AdvancedDynamicTexture, Button } from '@babylonjs/gui/2D';
 import "@babylonjs/loaders/glTF";
-import controllerModel from "/glb/logo.glb";
 let box: any;
 const onSceneReady = (scene) => {
 
@@ -25,7 +24,7 @@ const onSceneReady = (scene) => {
 	//add 360 dom 
 	var dome = new BABYLON.PhotoDome(
 		"testdome",
-		"/panolens/main.jpg",
+		"/panolens/2.jpg",
 		{
 			resolution: 64,
 			size: 4000,
@@ -39,21 +38,12 @@ const onSceneReady = (scene) => {
 	var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
 	let btn = SimpleButton();
 	advancedTexture.addControl(btn);
-
-
-	BABYLON.SceneLoader.ImportMesh("", "/glb/", "logo.glb", scene, (mesh) => {
-		console.log("meshes", mesh);
-	})
+	const result = SceneLoader.ImportMeshAsync(null, "/glb/", "logo.glb", scene);
 
 
 
 
 };
-
-
-
-
-
 
 
 const onRender = (scene) => {
