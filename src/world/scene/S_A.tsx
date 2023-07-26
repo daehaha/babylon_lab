@@ -36,8 +36,13 @@ const S_A = () => {
 		let logo: any;
 		const result = SceneLoader.ImportMeshAsync(null, "/glb/", "logo.glb", scene).then((result) => {
 			logo = result.meshes[0];
-			logo.position.z = -3;
-			logo.position.y = -10;
+			logo.position.z = -1;
+			logo.position.y = 5;
+
+			console.log("Initial rotation:", logo.rotation);
+			logo.rotation.y = BABYLON.Tools.ToRadians(90);
+			console.log("After rotation:", logo.rotation);
+			logo.rotation.y = BABYLON.Tools.ToRadians(90);
 		});
 
 
