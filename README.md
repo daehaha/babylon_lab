@@ -4,4 +4,6 @@
 - tailwind 
 - animejs 
 
-
+# feature 
+- enter the panolama image 
+- moving scene
