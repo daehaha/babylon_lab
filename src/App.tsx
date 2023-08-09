@@ -11,7 +11,7 @@ function App() {
 
 	return (
 		<>
-			<dia className="fixed right-10">  this is tell</dia>
+			<div className="fixed right-10">  this is tell</div>
 			<EnterScene />
 
 		</>

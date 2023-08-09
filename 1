@@ -12,7 +12,7 @@ const SimpleBox = (scene) => {
 	box.position = new BABYLON.Vector3(0, 1, 0);
 
 	box.actionManager = new BABYLON.ActionManager(scene);
-	box.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickTrigger, function() {
+	box.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickUpTrigger, function() {
 		console.log("clicked");
 	}));
 
