@@ -43,7 +43,7 @@ const SL1PBR = () => {
 		skyMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 		skyMaterial.diffuseColor = new BABYLON.Color3(1, 1, 1);
 		skyMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
-
+		skyMaterial.reflectionTexture.level = 1.4;
 
 
 
