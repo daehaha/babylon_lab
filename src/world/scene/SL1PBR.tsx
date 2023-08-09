@@ -10,6 +10,22 @@ const SL1PBR = () => {
 	const onSceneReady = (scene) => {
 		var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
 		const canvas = scene.getEngine().getRenderingCanvas();
+
+
+		// Set horizontal rotation limits (alpha)
+		camera.lowerAlphaLimit = Math.PI / 4; // Adjust as needed
+		camera.upperAlphaLimit = (Math.PI * 3) / 4; // Adjust as needed
+
+		// Set vertical rotation limits (beta)
+		camera.lowerBetaLimit = 0.1; // Adjust as needed
+		camera.upperBetaLimit = Math.PI / 2.5; // Adjust as needed
+
+		// Set radius limits
+		camera.lowerRadiusLimit = 5;
+		camera.upperRadiusLimit = 50;
+
+
+
 		camera.attachControl(canvas, true);
 		camera.inputs.attached.mousewheel.detachControl();
 		box = SimpleBox(scene);

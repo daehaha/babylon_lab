@@ -10,14 +10,35 @@ const S_A = () => {
 	const onSceneReady = (scene) => {
 		var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
 		const canvas = scene.getEngine().getRenderingCanvas();
+
+		camera.panningSensibility = 15;
+
+
+		camera.lowerRadiusLimit = 200;
+		camera.upperRadiusLimit = 800;
+
+		camera.lowerAlphaLimit = 0;
+		camera.upperAlphaLimit = Math.PI / 18;
+		camera.lowerBetaLimit = Math.PI / 3;
+		camera.upperBetaLimit = Math.PI / 3;
+
+		//camera.panningAxis = new BABYLON.Vector3(1, 1, 0);
+
+		camera.useAutoRotationBehavior = true;
+		camera.autoRotationBehavior.idleRotationSpeed = -.1;
+
+		scene.onBeforeCameraRenderObservable.add((camera) => {
+			if (camera.alpha >= camera.upperAlphaLimit
+				|| camera.alpha <= camera.lowerAlphaLimit) {
+				camera.autoRotationBehavior.idleRotationSpeed *= -1;
+			}
+		});
+
+		// This targets the camera to scene origin
+		camera.setTarget(BABYLON.Vector3.Zero());
+
+		// This attaches the camera to the canvas
 		camera.attachControl(canvas, true);
-		camera.noRotationConstraint = true;
-		camera.lowerAlphaLimit = Math.PI / 2;
-		camera.upperAlphaLimit = Math.PI / 2;
-		camera.lowerBetaLimit = Math.PI / 4;
-		camera.upperBetaLimit = Math.PI / 4;
-		camera.lowerRadiusLimit = 5;
-		camera.upperRadiusLimit = 50;
 
 
 		const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
@@ -55,7 +76,7 @@ const S_A = () => {
 	const onRender = (scene) => {
 		let camera = scene.getCameraByName("camera");
 
-		if (camera.radius > 70) camera.radius = 70; if (camera.radius < 5) camera.radius = 5;
+		if (camera.radius > 70) camera.radius = 20; if (camera.radius < 5) camera.radius = 5;
 	};
 	return {
 		onSceneReady,
