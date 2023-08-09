@@ -11,15 +11,21 @@ const S_A = () => {
 		var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
 		const canvas = scene.getEngine().getRenderingCanvas();
 		camera.attachControl(canvas, true);
-		camera.inputs.attached.mousewheel.detachControl();
+		camera.noRotationConstraint = true;
+		camera.lowerAlphaLimit = Math.PI / 2;
+		camera.upperAlphaLimit = Math.PI / 2;
+		camera.lowerBetaLimit = Math.PI / 4;
+		camera.upperBetaLimit = Math.PI / 4;
+		camera.lowerRadiusLimit = 5;
+		camera.upperRadiusLimit = 50;
+
+
 		const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
 		box = SimpleBox(scene);
 		box.position.y = -5;
 		light.intensity = 0.7;
-		//box = MeshBuilder.CreateBox("box", { size: 2 }, scene);
-		//box.position.y = 3;
-		//MeshBuilder.CreateGround("ground", { width: 6, height: 6 }, scene);
-		//add 360 dom 
+
+
 		var dome = new BABYLON.PhotoDome(
 			"testdome",
 			"/panolens/main.jpg",
@@ -38,10 +44,6 @@ const S_A = () => {
 			logo = result.meshes[0];
 			logo.position.z = -1;
 			logo.position.y = 5;
-
-			console.log("Initial rotation:", logo.rotation);
-			logo.rotation.y = BABYLON.Tools.ToRadians(90);
-			console.log("After rotation:", logo.rotation);
 			logo.rotation.y = BABYLON.Tools.ToRadians(90);
 		});
 
@@ -51,11 +53,9 @@ const S_A = () => {
 	};
 
 	const onRender = (scene) => {
-		if (box !== undefined) {
-			const deltaTimeInMillis = scene.getEngine().getDeltaTime();
-			const rpm = 10;
-			//	box.rotation.y += (rpm / 60) * Math.PI * 2 * (deltaTimeInMillis / 1000);
-		}
+		let camera = scene.getCameraByName("camera");
+
+		if (camera.radius > 70) camera.radius = 70; if (camera.radius < 5) camera.radius = 5;
 	};
 	return {
 		onSceneReady,
