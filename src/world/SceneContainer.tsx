@@ -8,7 +8,6 @@ function LoadingScreen() {
 			<div className="loadingText">
 				<h1>Loading</h1>
 				<hr />
-				<h3>Experiencing Problems? Contact us at support@hastiludes.com</h3>
 			</div>
 		</div>
 	);
@@ -75,7 +74,7 @@ const SceneContainer = ({ antialias, engineOptions, adaptToDeviceRatio, sceneOpt
 		};
 	}, [antialias, engineOptions, adaptToDeviceRatio, sceneOptions, onRender, onSceneReady]);
 
-	return <canvas ref={reactCanvas} {...rest} />;
+	return <canvas ref={reactCanvas} {...rest} className="w-full" />;
 };
 
 export default SceneContainer;
