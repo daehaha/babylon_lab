@@ -1,7 +1,7 @@
 import * as BABYLON from "@babylonjs/core";
 import { FreeCamera, Vector3, HemisphericLight, MeshBuilder, SceneLoader } from "@babylonjs/core";
 import SimpleBox from '../object/SimpleBox'
-import SimpleButton from '../object/SimpleButton'
+import Btn_normal from '../ui/Button'
 import { AdvancedDynamicTexture, Button } from '@babylonjs/gui/2D';
 import "@babylonjs/loaders/glTF";
 const SL1PBR = () => {
@@ -38,8 +38,7 @@ const SL1PBR = () => {
 		var environment = scene.createDefaultEnvironment({
 			createSkybox: false,
 		});
-
-
+		let btn = Btn_normal();
 	};
 
 	const onRender = (scene) => {
