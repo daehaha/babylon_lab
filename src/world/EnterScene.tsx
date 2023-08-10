@@ -5,7 +5,6 @@ import S_B from './scene/S_B'
 import SL1PBR from './scene/SL1PBR'
 import SceneContainer from './SceneContainer'
 
-
 const EnterPano = () => {
 	const A = SL1PBR();
 	const B = S_B();

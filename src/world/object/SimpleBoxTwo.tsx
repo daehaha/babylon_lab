@@ -1,8 +1,8 @@
-import * as BABYLON from "babylonjs";
+import * as BABYLON from "@babylonjs/core";
 
 const SimpleBoxTwo = (scene) => {
-	let bot: any;
 	const result = SceneLoader.ImportMeshAsync(null, "/glb/", "bot_box.glb", scene).then((result) => {
+		let bot: any;
 		bot = result.meshes[0];
 		bot.isPickable = true;
 		bot.position.z = -1;
@@ -11,8 +11,8 @@ const SimpleBoxTwo = (scene) => {
 		bot.actionManager = new BABYLON.ActionManager(scene);
 		// Add a pointer down action to the action manager
 		//
-		box.actionManager = new BABYLON.ActionManager(scene);
-		box.actionManager.registerAction(
+		bot.actionManager = new BABYLON.ActionManager(scene);
+		bot.actionManager.registerAction(
 			new BABYLON.ExecuteCodeAction(
 				BABYLON.ActionManager.OnPickTrigger, () => {
 					console.log("click Event");

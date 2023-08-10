@@ -1,9 +1,8 @@
-import * as BABYLON from 'babylonjs';
+import * as BABYLON from "@babylonjs/core";
 import { FreeCamera, Vector3, HemisphericLight, MeshBuilder, SceneLoader } from "@babylonjs/core";
 import SimpleBox from '../object/SimpleBox'
 import SimpleButton from '../object/SimpleButton'
 import { AdvancedDynamicTexture, Button } from '@babylonjs/gui/2D';
-import "@babylonjs/loaders/glTF";
 import "@babylonjs/loaders/glTF";
 const SL1PBR = () => {
 	let box: any;

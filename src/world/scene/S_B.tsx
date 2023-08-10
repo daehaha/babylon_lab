@@ -1,4 +1,4 @@
-import * as BABYLON from 'babylonjs';
+import * as Babylon from "@babylonjs/core";
 import { FreeCamera, Vector3, HemisphericLight, MeshBuilder, SceneLoader } from "@babylonjs/core";
 import SimpleBox from '../object/SimpleBox'
 import SimpleButton from '../object/SimpleButton'

@@ -1,4 +1,4 @@
-import * as BABYLON from "babylonjs";
+import * as BABYLON from "@babylonjs/core";
 const SimpleBox = (scene) => {
 	let box;
 	let mat = new BABYLON.StandardMaterial("mat", scene);

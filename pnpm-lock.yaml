@@ -49,12 +49,6 @@ devDependencies:
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.26)
-  babylonjs:
-    specifier: ^6.12.3
-    version: 6.12.3
-  babylonjs-loaders:
-    specifier: ^6.13.0
-    version: 6.13.0
   daisyui:
     specifier: ^3.3.1
     version: 3.3.1
@@ -885,23 +879,6 @@ packages:
       '@babylonjs/core': 6.12.3
       react: 18.2.0
     dev: false
-
-  /babylonjs-loaders@6.13.0:
-    resolution: {integrity: sha512-fRrpZKVWMjXZYVe4HyIiKVRDOP+ISo/82MSWArzOUoimtcNrc9klxqtJzo+2O1UKnMYxidLzWSCx/pTJ8cQdEg==}
-    dependencies:
-      babylonjs: 6.13.0
-      babylonjs-gltf2interface: 6.13.0
-    dev: true
-
-  /babylonjs@6.12.3:
-    resolution: {integrity: sha512-nAZAvIA/5btj8fBzcXHaceTFIpqdia+ouVCgLwREu2obHUbMvguYu/J9P5IEGsC/GJBsoWsPHn3pdH/POTks+Q==}
-    requiresBuild: true
-    dev: true
-
-  /babylonjs@6.13.0:
-    resolution: {integrity: sha512-KRlGP8Ri51BRx8NzBxQUca/5SDWNeS/4zIDmMzOxAZ5G94UlIFIjRKXRNwpmWq2sBG5DQlU3om5GPWknEps6wg==}
-    requiresBuild: true
-    dev: true
 
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
